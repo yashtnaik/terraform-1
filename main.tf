@@ -27,7 +27,7 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
 }
 
 resource "aws_instance" "terraform_1" {
-  ami                     = "ami-0dee22c13ea7a9a67"
+  ami                     = "ami-002f6e91abff6eb96"
   instance_type           = "t2.micro"
   key_name = var.key
   vpc_security_group_ids = [ aws_security_group.tejas.id ]
