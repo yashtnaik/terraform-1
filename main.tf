@@ -8,9 +8,14 @@ resource "aws_instance" "terraform_1" {
   }
 }
 
+resource "aws_vpc" "main" {
+  cidr_block = "10.1.0.0/16"
+}
+
 resource "aws_security_group" "tejas" {
   name        = "tejas"
   description = "Allow TLS inbound traffic and all outbound traffic"
+  vpc_id      = aws_vpc.main.id
 
   tags = {
     Name = "tejas"
