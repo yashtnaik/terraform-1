@@ -1,9 +1,9 @@
-# resource "aws_eip" "tejas" {
-#     domain   = "vpc"  
-#     tags = {
-#         Name = "Tejas"
-#     }
-# }
+resource "aws_eip" "tejas" {
+    domain   = "vpc"  
+    tags = {
+        Name = "Tejas"
+    }
+}
 
 # resource "aws_security_group" "allow_tls" {
 #   name        = "allow_tls"
@@ -27,3 +27,8 @@
 #   cidr_ipv4         = "0.0.0.0/0"
 #   ip_protocol       = "-1" # semantically equivalent to all ports
 # }
+
+
+output "eip_public_ip" {
+    value = aws_eip.tejas.public_ip
+}
