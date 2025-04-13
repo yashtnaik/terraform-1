@@ -1,6 +1,6 @@
 resource "aws_eip" "tejas" {
     domain   = "vpc"  
-    tags {
+    tags = {
         Name = "Tejas"
     }
 }
