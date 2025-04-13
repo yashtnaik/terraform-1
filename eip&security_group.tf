@@ -27,8 +27,3 @@ resource "aws_eip" "tejas" {
 #   cidr_ipv4         = "0.0.0.0/0"
 #   ip_protocol       = "-1" # semantically equivalent to all ports
 # }
-
-
-output "eip_public_ip" {
-    value = aws_eip.tejas.public_ip
-}
