@@ -6,4 +6,5 @@ resource "aws_instance" "terraform_1" {
   tags = {
     Name = "terraform-1"
   }  
+  depends_on = [ aws_security_group.allow_tls ]
 }
