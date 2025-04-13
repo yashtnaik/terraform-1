@@ -1,5 +1,8 @@
 resource "aws_eip" "tejas" {
     domain   = "vpc"  
+    tags {
+        Name = "Tejas"
+    }
 }
 
 resource "aws_security_group" "allow_tls" {
