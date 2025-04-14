@@ -5,3 +5,7 @@
 # output "sg" {
 #     value = aws_security_group.allow_tls.id 
 # }
+
+output "data_instance" {
+    value = data.aws_instances.try.instance_tags
+}
