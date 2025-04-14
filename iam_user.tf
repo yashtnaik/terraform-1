@@ -1,15 +1,9 @@
-resource "aws_iam_user" "tejas-2" {
-  name = "tejas-2"
-  path = "/system/"
+resource "aws_iam_user_policy" "lb_ro" {
+  name = "test"
+  user = aws_iam_user.lb.name
 
-  tags = {
-    tag-key = "tejas-2"
-  }
-}
-
-resource "aws_iam_user_policy" "tejas-2" {
-  name = "tejas-2"
-  user = aws_iam_user.tejas-2.name
+  # Terraform's "jsonencode" function converts a
+  # Terraform expression result to valid JSON syntax.
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -24,6 +18,11 @@ resource "aws_iam_user_policy" "tejas-2" {
   })
 }
 
+resource "aws_iam_user" "lb" {
+  name = "tejas-2"
+  path = "/system/"
+}
+
 resource "aws_iam_access_key" "lb" {
-  user = aws_iam_user.tejas-2.name
+  user = aws_iam_user.lb.name
 }
