@@ -11,5 +11,5 @@ output "data_instance" {
 }
 
 output "ami_ids" {
-    value = data.aws_ami.my_ami.id  
+    value = data.aws_ami.my_ami.id
 }
