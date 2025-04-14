@@ -10,6 +10,6 @@ output "data_instance" {
     value = data.aws_instances.try.ids
 }
 
-output "ami" {
-    value = data.aws_ami_ids.my_amis
+output "ami_ids" {
+    value = data.aws_ami.my_ami.id  
 }
