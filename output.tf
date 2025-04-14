@@ -7,5 +7,5 @@
 # }
 
 output "data_instance" {
-    value = data.aws_instances.try.instance_tags
+    value = data.aws_instances.try.ids
 }
